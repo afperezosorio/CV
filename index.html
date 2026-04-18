@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Andrés Felipe Pérez Osorio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a1a; 
+            color: #ffffff;
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-weight: 300;
+            margin: 0;
+            padding: 40px;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        a {
+            color: #66b3ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        strong, b {
+            font-weight: 600;
+        }
+        .header {
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            display: inline-block;
+        }
+        .header .date {
+            float: right;
+            font-style: italic;
+            font-size: 12px;
+            color: #cccccc;
+            margin-top: 8px;
+        }
+        .header-contact {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .container {
+            display: flex;
+            gap: 30px;
+        }
+        .left-col {
+            flex: 0 0 32%;
+        }
+        .right-col {
+            flex: 0 0 65%;
+        }
+        .divider-vertical {
+            width: 1px;
+            background-color: #444444;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid #555555;
+            padding-bottom: 3px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .job-title {
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .job-date {
+            float: right;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        .company {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .company-location {
+            float: right;
+            font-size: 13px;
+        }
+        ul {
+            padding-left: 18px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        .separator {
+            border-top: 1px solid #444444;
+            margin: 15px 0;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        td {
+            padding: 2px 0;
+            vertical-align: top;
+        }
+        .tematica {
+            border: 1px solid #444444;
+            padding: 15px 10px 5px 10px;
+            margin-bottom: 20px;
+            position: relative;
+            background-color: #242424;
+        }
+        .tematica-title {
+            position: absolute;
+            top: -10px;
+            left: -1px;
+            background: #000000;
+            color: #ffffff;
+            padding: 2px 8px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .references-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 10px;
+        }
+        .reference-box {
+            flex: 1;
+        }
+        code {
+            font-family: monospace;
+            background-color: #333;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .bib-list {
+            list-style-type: decimal;
+            font-size: 13px;
+        }
+        .bib-list li {
+            margin-bottom: 8px;
+        }
+        
+        /* Contenedor responsivo para el QR */
+        .qr-link {
+            display: block; 
+            width: 100%; 
+            background-color: #000000; 
+            padding: 10px; 
+            border-radius: 5px;
+            box-sizing: border-box; /* Asegura que el padding no desborde la columna */
+        }
+        .qr-link img {
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            filter: invert(1); 
+            image-rendering: crisp-edges;
+        }
+
+        /* --- MEDIA QUERIES PARA MÓVILES --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px; /* Menos margen en pantallas pequeñas */
+            }
+            .header h1 {
+                display: block;
+                margin-bottom: 10px;
+            }
+            .header .date {
+                float: none;
+                display: block;
+                margin-bottom: 10px;
+            }
+            .container {
+                flex-direction: column; /* Apila las columnas verticalmente */
+                gap: 10px;
+            }
+            .left-col, .right-col {
+                flex: 1 1 100%;
+                width: 100%;
+            }
+            .divider-vertical {
+                display: none; /* Oculta la línea vertical en móviles */
+            }
+            .job-date, .company-location {
+                float: none;
+                display: block;
+                font-size: 13px;
+                color: #bbbbbb;
+            }
+            .references-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .qr-link {
+                max-width: 300px; /* Evita que el QR sea inmenso en móviles */
+                margin: 0 auto; /* Centra el QR en móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Andrés Felipe Pérez Osorio</h1>
+        <span class="date">18 abr. 2026</span>
+        <div class="header-contact">
+            <a href="mailto:andres.perez@hexagon.com">andres.perez@hexagon.com</a> | <a href="https://wa.me/573163771370">+57 316 377 1370</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="left-col">
+            <div class="section-title">Info. de contacto</div>
+            <p>Escanée el código o haga clic:</p>
+            <div style="margin-bottom: 15px;">
+                <a href="https://linktr.ee/afperezosorio" class="qr-link">
+                    <img src="afperezosorio.png" alt="Código QR Linktree">
+                </a>
+            </div>
+
+            <div class="section-title">Habilidades técnicas</div>
+            <p><strong>Herramientas:</strong></p>
+            <ul>
+                <li><a href="https://idsgeoradar.com/products/software/guardian">Guardian</a>, <a href="https://idsgeoradar.com/products/software/aida">Ai.DA</a>, <a href="https://leica-geosystems.com/products/total-stations/software/leica-geomos">Leica GeoMoS&copy;</a></li>
+                <li><a href="https://www.microsoft.com/en/microsoft-365">Microsoft 365</a>, <a href="https://www.latex-project.org/about/">LaTeX</a></li>
+                <li><a href="https://www.mathworks.com/products/matlab.html">MATLAB&reg;</a>, <a href="https://jupyter.org/">Jupyter Notebook</a>, <a href="https://colab.google/">Google Colab</a></li>
+                <li><a href="https://www.microsoft.com/en-us/power-platform/products/power-bi">Power BI</a>, <a href="https://lookerstudio.google.com/overview">Looker Studio</a></li>
+                <li><a href="https://www.esri.com/en-us/arcgis/geospatial-platform/overview">ArcGIS</a></li>
+                <li><a href="https://vensim.com/software/">Vensim</a>, <a href="https://www.netlogo.org/about/">NetLogo</a></li>
+            </ul>
+            <p><strong>Lenguajes de programación:</strong></p>
+            <ul>
+                <li><a href="https://www.python.org/"><code>Python</code></a> [<a href="https://numpy.org/"><code>NumPy</code></a>, <a href="https://scipy.org/"><code>SciPy</code></a>, <a href="https://pandas.pydata.org/"><code>pandas</code></a>, <a href="https://scikit-learn.org/"><code>scikit-learn</code></a>, <a href="https://matplotlib.org/"><code>matplotlib</code></a>, <a href="https://seaborn.pydata.org/"><code>seaborn</code></a>, <a href="https://plotly.com/"><code>plotly</code></a>, <code>folium</code>, <a href="https://dash.plotly.com/"><code>dash</code></a>]</li>
+                <li><a href="https://www.r-project.org/about.html"><code>R</code></a> [<a href="https://tidyverse.org/"><code>tidyverse</code></a>, <a href="https://www.tidymodels.org/"><code>tidymodels</code></a>, <a href="https://doi.org/10.32614/CRAN.package.leaflet"><code>leaflet</code></a>, <a href="https://doi.org/10.32614/CRAN.package.shiny"><code>shiny</code></a>]</li>
+                <li><a href="https://www.mathworks.com/products/matlab/programming-with-matlab.html"><code>MATLAB</code></a>; <a href="https://learn.microsoft.com/en-us/office/vba/api/overview/"><code>VBA</code></a>; <code>SQL</code></li>
+            </ul>
+
+            <div class="section-title">Habilidades blandas</div>
+            <p>Proactividad; adaptabilidad; cooperación; aprendizaje y mejora continua; resolución de problemas con pensamiento analítico, multimodelo y sistémico; comunicación efectiva; liderazgo técnico; visión prospectiva.</p>
+
+            <div class="section-title">Idiomas</div>
+            <table>
+                <tr>
+                    <td style="width: 35%;">Español</td>
+                    <td style="width: 25%;">nativo</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Inglés</td>
+                    <td>C2</td>
+                    <td><a href="https://cert.efset.org/es/VkakPx">EF SET: 77/100</a></td>
+                </tr>
+                <tr>
+                    <td>Italiano</td>
+                    <td>C1</td>
+                    <td><a href="https://cvcl.unistrapg.it//cvcl/tools/AdminVerificaRisultatiCandidato.aspx?mtr=999989937">CELI 4: 149/200</a></td>
+                </tr>
+                <tr>
+                    <td>Alemán</td>
+                    <td>A2</td>
+                    <td>-</td>
+                </tr>
+            </table>
+
+            <div class="section-title">Licencias</div>
+            <table>
+                <tr>
+                    <td style="width: 50%;">Licencia de conducción</td>
+                    <td>Categoría B1<br><small>(expira el 11 abr. 2035)</small></td>
+                </tr>
+            </table>
+
+            <div class="section-title">Intereses personales</div>
+            <p>Lectura de divulgación científica, ciencias sociales, ensayo, memorias, desarrollo personal y ficción; cine; práctica regular de natación; seguimiento de la actualidad socioeconómica.</p>
+
+            <div class="section-title">Publicaciones</div>
+            <ul class="bib-list">
+                <li>Rodríguez-Romero, S., Gordón-Gómez, M. C., Dal Santo, N., Michelini, A., Bianchetti, M., Giliberto, F., Díaz, M. y <strong>Pérez-Osorio, A.</strong> (2025). <em>Comprehensive multi-sensor monitoring of the Atalaya Riotinto Tailings Storage Facility (TSF) during heavy rainfall</em>. [En preparación].</li>
+                <li>Bonicelli, A., <strong>Pérez-Osorio, A.</strong> y Fuentes, L. (2019). <em>Evaluating the incidence of mix design parameters and compaction on the properties of pervious concrete mixtures for urban pavements: a statistical approach</em>. IOP Conference Series: Materials Science and Engineering, 471, 032060. <a href="https://doi.org/10.1088/1757-899X/471/3/032060">doi: 10.1088/1757-899X/471/3/032060</a></li>
+                <li>Bonicelli, A., <strong>Pérez-Osorio, A.</strong> y Marenco, R. (2018). <em>Experimental study on the influence of coarse aggregate size and cement content on the properties of pervious concrete mixes</em>. Transportation Research Board 97th Annual Meeting, Washington, D.C., USA. [Paper 18-06582].</li>
+            </ul>
+
+            <div class="section-title">Reconocimientos</div>
+            <ul>
+                <li>Mención de Honor a Graduando de Excelencia, Universidad del Norte, Barranquilla, 081007, Colombia, 13 mar. 2020</li>
+                <li>Reconocimiento por Excelente Desempeño en las Pruebas <em>Saber Pro 2017</em> <small>[puntaje: 224/300; 1% más alto a nivel nacional]</small>, Universidad del Norte, Barranquilla, 081007, Colombia, 21 ago. 2018</li>
+                <li>Miembro del Cuadro de Honor, División de Ingenierías, Universidad del Norte, Barranquilla, 081007, Colombia, 3 may. 2017</li>
+                <li>Miembro del Cuadro de Honor, División de Ingenierías, Universidad del Norte, Barranquilla, 081007, Colombia, 24 ago. 2016</li>
+                <li>Beca Uninorte Caribe <small>[exención total de matrícula durante todo el pregrado]</small>, Universidad del Norte, Barranquilla, 081007, Colombia, 21 ene. 2014</li>
+                <li>Segundo Mejor Bachiller 2013, Colegio Colón, Barranquilla, 080002, Colombia, 29 nov. 2013</li>
+                <li>Mejor Pruebas <em>Saber 11º</em> <small>[puntaje: 421/500; 0.1% más alto a nivel nacional]</small>, Colegio Colón, Barranquilla, 080002, Colombia, 29 nov. 2013</li>
+            </ul>
+        </div>
+
+        <div class="divider-vertical"></div>
+
+        <div class="right-col">
+            <div class="section-title">Perfil</div>
+            <p>Profesional en ingeniería civil con conocimientos avanzados de geotecnia, formación en análisis y ciencia de datos, y más de 3.5 años de experiencia en monitoreo geotécnico de minas a cielo abierto con radar terrestre (<a href="https://share.google/aimode/ElyZpNOpU7ly8s0rn">GbSAR</a>) y otros sensores remotos.</p>
+            <p>Destacado por identificar brechas de desarrollo y actuar proactivamente para cerrarlas mediante soluciones que integran diversas herramientas analíticas y computacionales para automatizar procesos, optimizar flujos de trabajo y respaldar la toma de decisiones operativas basadas en datos.</p>
+            <p>Reconocido por impulsar iniciativas de estandarización, innovación y mejora continua en entornos de alta exigencia técnica.</p>
+            <p>Interesado en aplicar enfoques interdisciplinarios y transdisciplinarios que articulen ingeniería, ciencia de datos y pensamiento estructurado para añadir valor y resolver problemas complejos.</p>
+
+            <div class="section-title">Formación académica</div>
+            <div>
+                <span class="job-title"><a href="https://drive.google.com/file/d/1IwhjTNUppDEwmLPNRxfcJuyB3npfrNAq/view">Ingeniería Civil</a></span> (<a href="https://www.abet.org/accreditation/">ABET-accredited</a>)
+                <span class="job-date">13 dic. 2019</span>
+                <div class="company">
+                    <a href="https://www.uninorte.edu.co/web/ingenierias">Universidad del Norte</a>
+                    <span class="company-location">Barranquilla, 081007, Colombia</span>
+                </div>
+                <p>Promedio: 4.26/5.00 | Puesto: 3º de 119<br>
+                Matrícula profesional: <a href="https://tramites.copnia.gov.co/Copnia_Microsite/CertificateOfGoodStanding/WaterMarkmethod?CertificateNumber=021037-0573631%20ATL">021037-0573631 ATL</a></p>
+            </div>
+
+            <div class="section-title">Experiencia profesional</div>
+            <div>
+                <span class="job-title">Analista de Monitoreo Geotécnico</span>
+                <span class="job-date">22 ago. 2022 &ndash; Presente</span>
+                <div class="company">
+                    <a href="https://hexagon.com/company/divisions/geosystems">Hexagon Geosystems</a>
+                    <span class="company-location">Barranquilla, 080020, Colombia</span>
+                </div>
+                <p>Descripción: Monitoreo en tiempo real e interpretación de datos de radar terrestre y prismas para la evaluación de riesgos geotécnicos, notificación inmediata de situaciones críticas al equipo en mina según protocolos establecidos y elaboración de reportes. Diagnóstico de fallas técnicas, soporte de primer nivel y escalamiento al personal especializado. Análisis diferido de datos de radar para la detección de desplazamientos lentos, orientado a la gestión de riesgos a largo plazo.</p>
+                <p>Aportes destacados:</p>
+                <ul>
+                    <li>Desarrollé y lideré la implementación de un sistema de reportes relámpago automatizados en Microsoft Excel (<code>.xlsm</code>), que transformó un proceso manual en un <em>data pipeline</em> ágil y redujo en más de 50% el tiempo de elaboración y entrega de cada reporte, incrementando de manera significativa el tiempo efectivo dedicado al monitoreo. El sistema estandariza entradas mediante menús desplegables y emplea macros programadas en <code>VBA</code> que, con sólo oprimir un botón, generan y almacenan reportes en PDF, redactan y envían mensajes adaptados de correo electrónico con adjuntos, limpian el formato automáticamente y ejecutan procesos de captura de datos relevantes y ETL (<em>extract, transform, load</em>) para la exportación de estos a bases de datos operativas.</li>
+                    <li>Elaboré <em>dashboards</em> en Microsoft Power BI conectados a estas bases de datos, mejorando la visualización de tendencias generales y facilitando la toma de decisiones operativas.</li>
+                    <li>Desarrollé en <code>Python</code> una aplicación de escritorio (<code>.exe</code>) que selecciona automáticamente el subconjunto óptimo de datos para el análisis de movimientos lentos según parámetros estadísticos de la serie de tiempo de calidad de datos, aumentando la confiabilidad y eficiencia del proceso.</li>
+                    <li>Optimicé el procesamiento de datos de radar para análisis de movimientos lentos, lo cual redujo el volumen de archivos a transferir desde PCs remotas, disminuyó el uso de almacenamiento local y acortó significativamente los tiempos de entrega. Capacité a mis pares en la aplicación de esta nueva metodología.</li>
+                    <li>Elaboración y presentación de reportes de consultoría a miembros de los equipos técnicos de los clientes, facilitando la toma de decisiones basadas en datos.</li>
+                    <li>Colaboración directa con el equipo de desarrollo de <a href="https://idsgeoradar.com/about-us/about-ids-georadar">IDS GeoRadar</a> en Italia, aportando desde una perspectiva de usuario informado.</li>
+                </ul>
+            </div>
+
+            <div class="section-title">Experiencia anterior</div>
+            <div>
+                <span class="job-title">Asistente de investigación</span>
+                <span class="job-date">mar. 2018 &ndash; may. 2018</span>
+                <div class="company">
+                    Universidad del Norte
+                    <span class="company-location">Barranquilla, 081007, Colombia</span>
+                </div>
+                <p>Dirección de Investigación, Desarrollo e Innovación<br>
+                Proyecto: Desarrollo de mezclas semiflexibles para pavimentos de alto desempeño con aplicaciones en Colombia<br>
+                Supervisora: <a href="https://it.linkedin.com/in/alessandra-bonicelli-056a1317">Alessandra Bonicelli, Ph.D.</a><br>
+                Descripción: Se realizaron ensayos de laboratorio, procesamiento de imágenes digitales y análisis estadísticos de datos para investigar el concreto permeable como posible material de pavimento amigable con el medio ambiente. <em>(Véase [2, 3] en la sección de Publicaciones)</em>.</p>
+            </div>
+
+            <div class="separator"></div>
+
+            <div>
+                <span class="job-title">Monitor (asistente de cátedra)</span>
+                <span class="job-date">feb. 2017 &ndash; may. 2018</span>
+                <div class="company">
+                    Universidad del Norte
+                    <span class="company-location">Barranquilla, 081007, Colombia</span>
+                </div>
+                <p>Materias: Materiales de Construcción (2017-1, Intersem. 2017); Fundaciones (2017-2, 2018-1); Diseño Estructural (2018-1).<br>
+                Descripción: Asistencia en clases y laboratorios. Apoyo académico a estudiantes.</p>
+            </div>
+
+            <div class="section-title">Experiencia académica internacional</div>
+            <div>
+                <span class="job-title"><a href="https://www.ingciv.polimi.it/en/index.html@p=44.html">Estudios de Maestría en Ingeniería Civil (Geotecnia)</a></span>
+                <div class="company" style="margin-top: 5px;">
+                    <a href="https://www.polimi.it/en/the-politecnico/about-polimi">Politecnico di Milano</a>
+                    <span class="company-location">Milán, 20133, Italia</span>
+                </div>
+                <p><small>Cursos: Engineering Seismology, Reinforced and Prestressed Concrete Structures, Elements of Dynamic of Structures, Groundwater Hydraulics, Geotechnical Modelling and Design, Geotechnics for Energy Production, Scientific and Technical Communication.</small></p>
+            </div>
+
+            <div class="separator"></div>
+
+            <div>
+                <span class="job-title"><a href="https://www.collegiodimilano.it/en/offerta-formativaen/">Attività Culturali</a></span>
+                <span class="job-date">21 jun. 2021</span>
+                <div class="company">
+                    <a href="https://www.collegiodimilano.it/en/">Collegio di Milano</a>
+                    <span class="company-location">Milán, 20142, Italia</span>
+                </div>
+            </div>
+
+            <div class="section-title">Formación complementaria</div>
+            
+            <div class="tematica">
+                <div class="tematica-title">Data Science &amp; Analytics</div>
+                <ul>
+                    <li><a href="https://www.coursera.org/verify/professional-cert/ZCFG3A6G0CZE"><strong>IBM Data Analytics with <code>R</code></strong></a> (128 horas), <a href="https://www.coursera.org/partners/ibm-skills-network">IBM</a>, 25 feb. 2026</li>
+                    <li><a href="https://coursera.org/verify/specialization/2BDIGJG8U97D"><strong>Generative AI for Data Scientists</strong></a> (31 horas), <a href="https://www.coursera.org/partners/ibm-skills-network">IBM</a>, 30 dic. 2025</li>
+                    <li><a href="https://coursera.org/verify/professional-cert/HFS9Q3FNG4Y2"><strong>IBM Data Science</strong></a> (178 horas), <a href="https://www.coursera.org/partners/ibm-skills-network">IBM</a>, 24 dic. 2025</li>
+                    <li><a href="https://coursera.org/verify/professional-cert/2C5YR88ZL6YI"><strong>IBM Data Analyst</strong></a> (174 horas), <a href="https://www.coursera.org/partners/ibm-skills-network">IBM</a>, 21 dic. 2025</li>
+                    <li><a href="https://www.credential.net/95f0ee38-429e-43cb-aaea-ea95c5a40ed7#acc.FXyHka2B"><strong>Data Science for All</strong></a> (375 horas), <a href="https://www.correlation-one.com/about-correlation-one">Correlation One</a> &amp; <a href="https://www.mintic.gov.co/portal/inicio/">MinTIC</a>, 16 jul. 2022</li>
+                </ul>
+            </div>
+
+            <div class="tematica">
+                <div class="tematica-title">Software Development</div>
+                <ul>
+                    <li><a href="https://www.coursera.org/verify/N1WL8Q9YUT1X"><strong>Introduction to Software Engineering</strong></a> (14 horas), <a href="https://www.coursera.org/partners/ibm-skills-network">IBM</a>, 17 abr. 2026</li>
+                </ul>
+            </div>
+
+            <div class="tematica">
+                <div class="tematica-title">Models, Systems, Networks &amp; Complexity</div>
+                <ul>
+                    <li><a href="https://www.coursera.org/verify/1V5NOKNPENDE"><strong>Network Dynamics of Social Behavior</strong></a> (5 horas), <a href="https://www.coursera.org/partners/penn">University of Pennsylvania</a>, 2 feb. 2026</li>
+                    <li><a href="https://www.coursera.org/verify/16FAUYHGJ5A5"><strong>Introduction to Complexity Science</strong></a> (16 horas), <a href="https://www.coursera.org/partners/ntu">Nanyang Technological University, Singapore</a>, 29 dic. 2025</li>
+                    <li><a href="https://www.coursera.org/verify/BZS1AVWKIG51"><strong>Model Thinking</strong></a> (28 horas), <a href="https://www.coursera.org/partners/umich">University of Michigan</a>, 26 sep. 2025</li>
+                    <li><a href="https://www.coursera.org/verify/2DWS2FPEGZCL"><strong>Modeling of Dynamic Systems</strong></a> (14 horas), <a href="https://www.coursera.org/partners/boulder">University of Colorado Boulder</a>, 24 ago. 2025</li>
+                    <li><a href="https://www.coursera.org/verify/QKE27U3235US"><strong>Systems Thinking in Public Health</strong></a> (14 horas), <a href="https://www.coursera.org/partners/jhu">Johns Hopkins University</a>, 18 ago. 2025 &amp; <a href="https://www.coursera.org/verify/OY3NJAFR45AB"><strong>Systems Science and Obesity</strong></a> (10 horas), <a href="https://www.coursera.org/partners/jhu">Johns Hopkins University</a>, 1 feb. 2026</li>
+                    <li><a href="https://www.coursera.org/verify/5ZE5RB4M1WB4"><strong>Systems Thinking Basics</strong></a> (2 horas), <a href="https://www.coursera.org/partners/coursera">Coursera</a>, 14 ago. 2025</li>
+                </ul>
+            </div>
+
+            <div class="tematica">
+                <div class="tematica-title">Creative Writing</div>
+                <ul>
+                    <li><a href="https://coursera.org/verify/specialization/6TZ9EBN0JEMX"><strong>Memoir and Personal Essay</strong></a> (25 horas), <a href="https://www.coursera.org/partners/wesleyan">Wesleyan University</a>, 14 abr. 2026</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="clear: both; padding-top: 20px;">
+        <div class="section-title">Referencias</div>
+        <div class="references-container">
+            <div class="reference-box">
+                <strong>Manuel Esteban Díaz Mercado</strong><br>
+                Business Development Manager<br>
+                <a href="https://hexagon.com/company/divisions/geosystems">Hexagon Geosystems</a><br>
+                <a href="mailto:manuel.e.diaz@hexagon.com">manuel.e.diaz@hexagon.com</a><br>
+                <a href="https://wa.me/573142366763">+57 314 236 6763</a>
+            </div>
+            <div class="reference-box">
+                <strong>Luis Geovanny López Salgado</strong><br>
+                Ingeniero Geotécnico<br>
+                <a href="https://www.rockpointradar.com/">Rock Point</a>, Los Andes, Chile<br>
+                <a href="mailto:lg.lopez@rockpointradar.com">lg.lopez@rockpointradar.com</a><br>
+                <a href="https://wa.me/573002000164">+57 300 200 0164</a> | <a href="https://wa.me/56961728734">+56 961728734</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
