@@ -9,14 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #000000; 
+            background-color: #1a1a1a; 
             color: #ffffff;
             font-family: 'IBM Plex Sans', sans-serif;
             font-weight: 300;
             margin: 0;
             padding: 40px;
-            line-height: 1.5;
-            font-size: 16px; /* antes 14px */
+            line-height: 1.6;
+            /* Aumentado de 14px a 16px */
+            font-size: 16px;
         }
         a {
             color: #66b3ff;
@@ -29,28 +30,28 @@
             font-weight: 600;
         }
         .header {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         .header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 30px; /* Ajustado proporcionalmente */
             font-weight: 700;
             display: inline-block;
         }
         .header .date {
             float: right;
             font-style: italic;
-            font-size: 12px;
+            font-size: 14px;
             color: #cccccc;
-            margin-top: 8px;
+            margin-top: 10px;
         }
         .header-contact {
             margin-top: 5px;
-            font-size: 14px;
+            font-size: 16px;
         }
         .container {
             display: flex;
-            gap: 30px;
+            gap: 40px;
         }
         .left-col {
             flex: 0 0 32%;
@@ -63,77 +64,77 @@
             background-color: #444444;
         }
         .section-title {
-            font-size: 16px;
+            font-size: 18px; /* Ajustado proporcionalmente */
             font-weight: 700;
             text-transform: uppercase;
             border-bottom: 1px solid #555555;
-            padding-bottom: 3px;
-            margin-top: 25px;
-            margin-bottom: 10px;
+            padding-bottom: 4px;
+            margin-top: 30px;
+            margin-bottom: 12px;
         }
         .job-title {
             font-weight: 600;
-            font-size: 15px;
+            font-size: 17px; /* Ajustado proporcionalmente */
         }
         .job-date {
             float: right;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 14px;
         }
         .company {
-            margin-bottom: 10px;
-            font-size: 14px;
+            margin-bottom: 12px;
+            font-size: 16px;
         }
         .company-location {
             float: right;
-            font-size: 13px;
+            font-size: 14px;
         }
         ul {
-            padding-left: 18px;
-            margin-top: 5px;
-            margin-bottom: 10px;
+            padding-left: 20px;
+            margin-top: 8px;
+            margin-bottom: 12px;
         }
         li {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .separator {
             border-top: 1px solid #444444;
-            margin: 15px 0;
+            margin: 20px 0;
         }
         p {
             margin-top: 0;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 14px;
+            font-size: 16px;
         }
         td {
-            padding: 2px 0;
+            padding: 4px 0;
             vertical-align: top;
         }
         .tematica {
             border: 1px solid #444444;
-            padding: 15px 10px 5px 10px;
-            margin-bottom: 20px;
+            padding: 18px 12px 6px 12px;
+            margin-bottom: 25px;
             position: relative;
             background-color: #242424;
         }
         .tematica-title {
             position: absolute;
-            top: -10px;
+            top: -12px;
             left: -1px;
             background: #000000;
             color: #ffffff;
-            padding: 2px 8px;
-            font-size: 12px;
+            padding: 2px 10px;
+            font-size: 13px;
             font-weight: 700;
         }
         .references-container {
             display: flex;
             gap: 40px;
-            margin-top: 10px;
+            margin-top: 15px;
         }
         .reference-box {
             flex: 1;
@@ -141,15 +142,15 @@
         code {
             font-family: monospace;
             background-color: #333;
-            padding: 2px 4px;
+            padding: 2px 5px;
             border-radius: 3px;
         }
         .bib-list {
             list-style-type: decimal;
-            font-size: 13px;
+            font-size: 15px;
         }
         .bib-list li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         
         .qr-link {
@@ -176,16 +177,16 @@
             .header h1 {
                 display: block;
                 margin-bottom: 10px;
+                font-size: 26px;
             }
             .header .date {
                 float: none;
                 display: block;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
             .container {
-                /* column-reverse invierte el orden: pone la columna derecha (perfil) arriba de la izquierda (habilidades) */
                 flex-direction: column-reverse; 
-                gap: 10px;
+                gap: 15px;
             }
             .left-col, .right-col {
                 flex: 1 1 100%;
@@ -197,15 +198,15 @@
             .job-date, .company-location {
                 float: none;
                 display: block;
-                font-size: 13px;
+                font-size: 14px;
                 color: #bbbbbb;
             }
             .references-container {
                 flex-direction: column;
-                gap: 20px;
+                gap: 25px;
             }
             .qr-link {
-                max-width: 300px; 
+                max-width: 320px; 
                 margin: 0 auto; 
             }
         }
@@ -288,7 +289,7 @@
 
             <div class="section-title">Publicaciones</div>
             <ul class="bib-list">
-                <!--<li>Rodríguez-Romero, S., Gordón-Gómez, M. C., Dal Santo, N., Michelini, A., Bianchetti, M., Giliberto, F., Díaz, M. y <strong>Pérez-Osorio, A.</strong> (2025). <em>Comprehensive multi-sensor monitoring of the Atalaya Riotinto Tailings Storage Facility (TSF) during heavy rainfall</em>. [En preparación].</li>-->
+                <li>Rodríguez-Romero, S., Gordón-Gómez, M. C., Dal Santo, N., Michelini, A., Bianchetti, M., Giliberto, F., Díaz, M. y <strong>Pérez-Osorio, A.</strong> (2025). <em>Comprehensive multi-sensor monitoring of the Atalaya Riotinto Tailings Storage Facility (TSF) during heavy rainfall</em>. [En preparación].</li>
                 <li>Bonicelli, A., <strong>Pérez-Osorio, A.</strong> y Fuentes, L. (2019). <em>Evaluating the incidence of mix design parameters and compaction on the properties of pervious concrete mixtures for urban pavements: a statistical approach</em>. IOP Conference Series: Materials Science and Engineering, 471, 032060. <a href="https://doi.org/10.1088/1757-899X/471/3/032060">doi: 10.1088/1757-899X/471/3/032060</a></li>
                 <li>Bonicelli, A., <strong>Pérez-Osorio, A.</strong> y Marenco, R. (2018). <em>Experimental study on the influence of coarse aggregate size and cement content on the properties of pervious concrete mixes</em>. Transportation Research Board 97th Annual Meeting, Washington, D.C., USA. [Paper 18-06582].</li>
             </ul>
@@ -435,7 +436,7 @@
         </div>
     </div>
 
-    <div style="clear: both; padding-top: 20px;">
+    <div style="clear: both; padding-top: 25px;">
         <div class="section-title">Referencias</div>
         <div class="references-container">
             <div class="reference-box">
