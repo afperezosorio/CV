@@ -168,6 +168,13 @@
             filter: invert(1); 
             image-rendering: crisp-edges;
         }
+	.profile-photo {
+            width: 100%; /* Tamaño ajustado */
+            height: auto;
+            border-radius: 0px; /* Opcional: bordes ligeramente redondeados */
+            margin-bottom: 15px;
+            display: block;
+	}
 
         /* --- MEDIA QUERIES PARA MÓVILES --- */
         @media (max-width: 768px) {
@@ -211,20 +218,27 @@
             }
         }
     </style>
+	
+
 </head>
 <body>
 
     <div class="header">
         <h1>Andrés Felipe Pérez Osorio</h1>
         <span class="date">18 abr. 2026</span>
+
+	
         <div class="header-contact">
             <strong>Tel.:</strong> <a href="https://wa.me/573163771370">+57 316 377 1370</a><br>
             <strong>E-mail:</strong> <a href="mailto:andres.perez@hexagon.com">andres.perez@hexagon.com</a>
         </div>
     </div>
-
+	
     <div class="container">
         <div class="left-col">
+	<div class="right-col">
+    	<img src="andres.jpeg" alt="Andrés Felipe Pérez Osorio" class="profile-photo">
+    	</div>
             <div class="section-title">Info. de contacto</div>
             <p>Escanée el código o haga clic:</p>
             <div style="margin-bottom: 15px;">
