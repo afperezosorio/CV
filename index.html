@@ -168,58 +168,94 @@
             filter: invert(1); 
             image-rendering: crisp-edges;
         }
-	.profile-photo {
+        .profile-photo {
             width: 100%; /* Tamaño ajustado */
             height: auto;
             border-radius: 0px; /* Opcional: bordes ligeramente redondeados */
             margin-bottom: 15px;
             display: block;
-	}
-	.cert-details {
-    	display: block;       /* Fuerza a que el texto empiece en una línea nueva (debajo) */
-    	margin-top: 3px;      /* Espacio entre el título y los detalles */
-    	margin-left: 15px;     /* Sangría para que se vea como un sub-elemento */
-    	font-size: 13.5px;    /* Tamaño reducido */
-    	color: #bbbbbb;       /* Color gris atenuado */
-    	line-height: 1.4;
-	}
-	.cert-details a {
-    		color: #88c1ff; /* Un azul un poco más suave que el de tus enlaces principales */
-       	}
+        }
+        .cert-details {
+            display: block;       /* Fuerza a que el texto empiece en una línea nueva (debajo) */
+            margin-top: 3px;      /* Espacio entre el título y los detalles */
+            margin-left: 15px;     /* Sangría para que se vea como un sub-elemento */
+            font-size: 13.5px;    /* Tamaño reducido */
+            color: #bbbbbb;       /* Color gris atenuado */
+            line-height: 1.4;
+        }
+        .cert-details a {
+            color: #88c1ff; /* Un azul un poco más suave que el de tus enlaces principales */
+        }
 
-	.cert-details a:hover {
-    		color: #ffffff; /* Se ilumina al pasar el cursor */
-	}
+        .cert-details a:hover {
+            color: #ffffff; /* Se ilumina al pasar el cursor */
+        }
 
-        /* --- ESTILOS PARA LA LÍNEA CONECTORA (ÁRBOL) ALINEACIÓN EXACTA --- */
-        .sub-lista {
+        /* ================== LÍNEA CONECTORA ÁRBOL (MATEMÁTICA PURA EM) ================== */
+
+        /* 1. Apagamos la viñeta nativa del padre para tomar el control gráfico total */
+        li:has(> ul.sub-lista) {
             list-style-type: none;
-            margin: 0;
-            padding-left: 0; 
-        }
-        .sub-lista li {
             position: relative;
-            padding-left: 20px; 
-            margin-top: 6px;    
-            font-size: 13.5px;
-            color: #bbbbbb;
         }
-        .sub-lista li a {
-            color: #88c1ff;
-        }
-        .sub-lista li a:hover {
-            color: #ffffff;
-        }
-        .sub-lista li::before {
+
+        /* 2. Dibujamos la viñeta del padre de forma personalizada (1em = 16px) */
+        li:has(> ul.sub-lista)::before {
             content: "";
             position: absolute;
-            left: -15px;       /* Centroide vertical exacto de la viñeta del padre */
-            top: -14px;        /* Nace exactamente del extremo inferior de la viñeta */
-            width: 27px;       /* Longitud para conectar suavemente con el texto */
-            height: 26px;      /* Cae justo hasta el centro del ítem hijo */
-            border-left: 2px solid #6c757d;   
-            border-bottom: 2px solid #6c757d; 
-            border-bottom-left-radius: 8px; 
+            left: -1em;        /* Viñeta a 16px a la izquierda del texto */
+            top: 0.6em;        /* Centrado respecto a la primera línea del padre (line-height 1.6) */
+            width: 0.4em;      /* Diámetro de la viñeta (6.4px) */
+            height: 0.4em;     
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+
+        /* 3. Preparamos la sub-lista (mantiene el contexto del padre: 1em = 16px) */
+        ul.sub-lista {
+            list-style: none;
+            margin-top: 0.4em;   /* Espacio exacto entre padre e hijo */
+            margin-bottom: 0;
+            padding-left: 1.6em; /* Sangría fija para el texto hijo */
+            position: relative;
+        }
+
+        /* 4. Dibujamos la línea conectora anclada directamente a la sub-lista */
+        ul.sub-lista::before {
+            content: "";
+            position: absolute;
+            
+            /* Todo en 'em' para evitar errores de redondeo de sub-píxeles al hacer zoom.
+               Eje exacto -0.8em menos la mitad del grosor del borde (0.0625em). */
+            left: calc(-0.8em - 0.0625em); 
+            
+            top: -1.0em;
+            height: 1.75em;
+            width: 1.8em;
+            
+            /* Grosor convertido a 'em' (0.125em = 2px relativos) */
+            border-left: 0.125em solid #6c757d;
+            border-bottom: 0.125em solid #6c757d;
+            border-bottom-left-radius: 0.5em;
+            pointer-events: none;
+        }
+
+        /* 5. Aseguramos el comportamiento interno del hijo */
+        ul.sub-lista li {
+            position: relative;
+            margin-bottom: 0;
+            font-size: 13.5px;
+            color: #bbbbbb;
+            line-height: 1.6;
+        }
+
+        ul.sub-lista li a { color: #88c1ff; }
+        ul.sub-lista li a:hover { color: #ffffff; }
+
+        /* Limpiamos rastros de métodos anteriores */
+        ul.sub-lista li::before,
+        ul.sub-lista li::after {
+            content: none;
         }
 
         /* --- MEDIA QUERIES PARA MÓVILES --- */
