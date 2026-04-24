@@ -220,33 +220,34 @@
             position: relative;
         }
 
-        /* 4. Línea vertical: Nace en la viñeta del padre y baja hasta el final de su texto */
-        li:has(> ul.sub-lista)::after {
+        /* 4. Dibujamos la línea conectora anclada directamente a la sub-lista */
+        ul.sub-lista::before {
             content: "";
             position: absolute;
-            left: calc(-0.8em - 0.0625em);
-            top: 1.0em; 
-            height: 100%; /* Se estira según el tamaño del texto del padre */
-            border-left: 0.125em solid #6c757d;
-            pointer-events: none;
-        }
-
-        /* 5. El Codo: Se ancla al hijo y "sube" para encontrarse con la línea del padre */
-        ul.sub-lista li:first-child::before {
-            content: "";
-            position: absolute;
-            left: -1.6em;   /* Cruza el padding del ul */
-            top: -1.2em;    /* Sube lo suficiente para traslaparse con la línea de arriba */
-            height: 2.0em;  /* Baja hasta el centro exacto (0.8em) del primer renglón */
-            width: 1.6em;
+            
+            /* Todo en 'em' para evitar errores de redondeo de sub-píxeles al hacer zoom.
+               Eje exacto -0.8em menos la mitad del grosor del borde (0.0625em). */
+            left: calc(-0.8em - 0.0625em); 
+            
+            top: -1.0em;
+            height: 1.75em;
+            width: 1.8em;
+            
+            /* Grosor convertido a 'em' (0.125em = 2px relativos) */
             border-left: 0.125em solid #6c757d;
             border-bottom: 0.125em solid #6c757d;
             border-bottom-left-radius: 0.5em;
             pointer-events: none;
         }
 
-        /* Ajuste de seguridad para que no haya líneas dobles */
-        ul.sub-lista::before { content: none; }
+        /* 5. Aseguramos el comportamiento interno del hijo */
+        ul.sub-lista li {
+            position: relative;
+            margin-bottom: 0;
+            font-size: 13.5px;
+            color: #bbbbbb;
+            line-height: 1.6;
+        }
 
         ul.sub-lista li a { color: #88c1ff; }
         ul.sub-lista li a:hover { color: #ffffff; }
