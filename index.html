@@ -191,7 +191,7 @@
     		color: #ffffff; /* Se ilumina al pasar el cursor */
 	}
 
-        /* --- ESTILOS PARA LA LÍNEA CONECTORA (ÁRBOL) --- */
+        /* --- ESTILOS PARA LA LÍNEA CONECTORA (ÁRBOL) ALINEACIÓN EXACTA --- */
         .sub-lista {
             list-style-type: none;
             margin: 0;
@@ -213,10 +213,10 @@
         .sub-lista li::before {
             content: "";
             position: absolute;
-            left: -16px;       /* Alineación exacta con el centroide de la viñeta */
-            top: -10px;        /* Nace exactamente desde el borde inferior de la viñeta */
-            width: 26px;       
-            height: 24px;      
+            left: -15px;       /* Centroide vertical exacto de la viñeta del padre */
+            top: -14px;        /* Nace exactamente del extremo inferior de la viñeta */
+            width: 27px;       /* Longitud para conectar suavemente con el texto */
+            height: 26px;      /* Cae justo hasta el centro del ítem hijo */
             border-left: 2px solid #6c757d;   
             border-bottom: 2px solid #6c757d; 
             border-bottom-left-radius: 8px; 
