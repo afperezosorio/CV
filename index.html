@@ -190,6 +190,38 @@
 	.cert-details a:hover {
     		color: #ffffff; /* Se ilumina al pasar el cursor */
 	}
+
+        /* --- ESTILOS PARA LA LÍNEA CONECTORA (ÁRBOL) --- */
+        .sub-lista {
+            list-style-type: none;
+            margin: 0;
+            padding-left: 0; 
+        }
+        .sub-lista li {
+            position: relative;
+            padding-left: 20px; 
+            margin-top: 6px;    
+            font-size: 13.5px;
+            color: #bbbbbb;
+        }
+        .sub-lista li a {
+            color: #88c1ff;
+        }
+        .sub-lista li a:hover {
+            color: #ffffff;
+        }
+        .sub-lista li::before {
+            content: "";
+            position: absolute;
+            left: -16px;       /* Alineación exacta con el centroide de la viñeta */
+            top: -10px;        /* Nace exactamente desde el borde inferior de la viñeta */
+            width: 26px;       
+            height: 24px;      
+            border-left: 2px solid #6c757d;   
+            border-bottom: 2px solid #6c757d; 
+            border-bottom-left-radius: 8px; 
+        }
+
         /* --- MEDIA QUERIES PARA MÓVILES --- */
         @media (max-width: 768px) {
             body {
@@ -492,11 +524,11 @@
                         <li><a href="https://www.coursera.org/verify/professional-cert/ZCFG3A6G0CZE"><strong>IBM Data Analytics with <code>R</code></strong></a> (128 horas), <a href="https://www.coursera.org/partners/ibm-skills-network">IBM</a>, 25 feb. 2026</li>
                         <li><a href="https://coursera.org/verify/specialization/2BDIGJG8U97D"><strong>Generative AI for Data Scientists</strong></a> (31 horas), <a href="https://www.coursera.org/partners/ibm-skills-network">IBM</a>, 30 dic. 2025</li>
                         <li>
-                <a href="https://coursera.org/verify/professional-cert/HFS9Q3FNG4Y2"><strong>IBM Data Science</strong></a> (178 horas), <a href="https://www.coursera.org/partners/ibm-skills-network">IBM</a>, 24 dic. 2025
-                <span class="cert-details">
-                            <a href="https://www.coursera.org/verify/COEDB3M4VRTM">Machine Learning with <code>Python</code></a> (20 horas), 23 dic. 2025
-                </span>
-                </li>
+                            <a href="https://coursera.org/verify/professional-cert/HFS9Q3FNG4Y2"><strong>IBM Data Science</strong></a> (178 horas), <a href="https://www.coursera.org/partners/ibm-skills-network">IBM</a>, 24 dic. 2025
+                            <ul class="sub-lista">
+                                <li><a href="https://www.coursera.org/verify/COEDB3M4VRTM">Machine Learning with <code>Python</code></a> (20 horas), 23 dic. 2025</li>
+                            </ul>
+                        </li>
                         <li><a href="https://coursera.org/verify/professional-cert/2C5YR88ZL6YI"><strong>IBM Data Analyst</strong></a> (174 horas), <a href="https://www.coursera.org/partners/ibm-skills-network">IBM</a>, 21 dic. 2025</li>
                         <li><a href="https://www.credential.net/95f0ee38-429e-43cb-aaea-ea95c5a40ed7#acc.FXyHka2B"><strong>Data Science for All</strong></a> (375 horas), <a href="https://www.correlation-one.com/about-correlation-one">Correlation One</a> &amp; <a href="https://www.mintic.gov.co/portal/inicio/">MinTIC</a>, 16 jul. 2022</li>
                     </ul>
