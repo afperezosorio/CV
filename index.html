@@ -191,12 +191,12 @@
             color: #ffffff; /* Se ilumina al pasar el cursor */
         }
 
-        /* ================== LÍNEA CONECTORA ÁRBOL (MATEMÁTICA PURA EM) ================== */
+       /* ================== LÍNEA CONECTORA ÁRBOL (ROBUSTA Y MULTI-LÍNEA) ================== */
 
         /* 1. Apagamos la viñeta nativa del padre para tomar el control gráfico total */
         li:has(> ul.sub-lista) {
             list-style-type: none;
-            position: relative;
+            position: relative; /* ESTE ES EL ANCLA MAESTRA PARA LA LÍNEA */
         }
 
         /* 2. Dibujamos la viñeta del padre de forma personalizada (1em = 16px) */
@@ -204,36 +204,38 @@
             content: "";
             position: absolute;
             left: -1em;        /* Viñeta a 16px a la izquierda del texto */
-            top: 0.6em;        /* Centrado respecto a la primera línea del padre (line-height 1.6) */
-            width: 0.4em;      /* Diámetro de la viñeta (6.4px) */
+            top: 0.6em;        /* Centrado respecto a la primera línea del padre */
+            width: 0.4em;      /* Diámetro de la viñeta */
             height: 0.4em;     
             background-color: #ffffff;
             border-radius: 50%;
         }
 
-        /* 3. Preparamos la sub-lista (mantiene el contexto del padre: 1em = 16px) */
+        /* 3. Preparamos la sub-lista */
         ul.sub-lista {
             list-style: none;
-            margin-top: 0.4em;   /* Espacio exacto entre padre e hijo */
+            margin-top: 0.4em;   
             margin-bottom: 0;
-            padding-left: 1.6em; /* Sangría fija para el texto hijo */
-            position: relative;
+            padding-left: 1.6em; 
+            /* ELIMINAMOS position: relative; para que su ::before use al padre como referencia elástica */
         }
 
-        /* 4. Dibujamos la línea conectora anclada directamente a la sub-lista */
+        /* 4. Dibujamos la línea conectora (Se estira automáticamente con el texto) */
         ul.sub-lista::before {
             content: "";
-            position: absolute;
+            position: absolute; /* Al ser la sub-lista estática, se ancla al li:has(> ul.sub-lista) */
             
-            /* Todo en 'em' para evitar errores de redondeo de sub-píxeles al hacer zoom.
-               Eje exacto -0.8em menos la mitad del grosor del borde (0.0625em). */
+            /* EJE X: Alineado exactamente al centro de la viñeta */
             left: calc(-0.8em - 0.0625em); 
             
-            top: -1.0em;
-            height: 1.75em;
-            width: 1.8em;
+            /* EJE Y SUPERIOR: Nace siempre justo debajo de la viñeta del padre */
+            top: 1.0em;
             
-            /* Grosor convertido a 'em' (0.125em = 2px relativos) */
+            /* EJE Y INFERIOR: Termina matemáticamente en el centro geométrico de la caja del hijo */
+            bottom: 0.8em;
+            
+            /* Trazamos la L */
+            width: 1.8em;
             border-left: 0.125em solid #6c757d;
             border-bottom: 0.125em solid #6c757d;
             border-bottom-left-radius: 0.5em;
