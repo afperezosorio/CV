@@ -197,6 +197,24 @@
             color: #ffffff; /* Se ilumina al pasar el cursor */
         }
 
+		.frac {
+  		display: inline-block;
+  		text-align: center;
+  		vertical-align: middle;
+		}
+
+		.frac .num {
+  		display: block;
+  		border-bottom: 1px solid #000;
+  		padding: 0 2px;
+		}
+
+		.frac .den {
+  		display: block;
+  		padding: 0 2px;
+		}
+
+
         /* ================== ESTILOS DE LISTA Y ÁRBOL ================== */
         /* 1. Apagamos las viñetas nativas para TODAS las listas normales (excepto bibliografía y sub-listas) */
         ul:not(.bib-list):not(.sub-lista) {
@@ -430,7 +448,7 @@
         <div class="right-col">
             <div class="sec-profile">
                 <div class="section-title">Perfil</div>
-                <p>Profesional en ingeniería civil con conocimientos avanzados de geotecnia, formación en análisis y ciencia de datos, y más de 3 <sup>5</sup>&frasl;<sub>6</sub> años de experiencia en monitoreo geotécnico de minas a cielo abierto con radar terrestre (<a href="https://share.google/aimode/ElyZpNOpU7ly8s0rn">GbSAR</a>) y otros sensores remotos.</p>
+                <p>Profesional en ingeniería civil con conocimientos avanzados de geotecnia, formación en análisis y ciencia de datos, y más de 3<span class="frac"><span class="num">5</span><span class="den">6</span></span> años de experiencia en monitoreo geotécnico de minas a cielo abierto con radar terrestre (<a href="https://share.google/aimode/ElyZpNOpU7ly8s0rn">GbSAR</a>) y otros sensores remotos.</p>
                 <p>Destacado por identificar brechas de desarrollo y actuar proactivamente para cerrarlas mediante soluciones que integran diversas herramientas analíticas y computacionales para automatizar procesos, optimizar flujos de trabajo y respaldar la toma de decisiones operativas basadas en datos.</p>
                 <p>Reconocido por impulsar iniciativas de estandarización, innovación y mejora continua en entornos de alta exigencia técnica.</p>
                 <p>Interesado en aplicar enfoques interdisciplinarios y transdisciplinarios que articulen ingeniería, ciencia de datos y pensamiento estructurado para añadir valor y resolver problemas complejos.</p>
