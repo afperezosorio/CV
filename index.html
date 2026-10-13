@@ -137,6 +137,20 @@
             font-size: 13px;
             font-weight: 700;
         }
+		.tags-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    gap: 8px; /* Controla la separación entre cada etiqueta */
+	    margin-bottom: 10px;
+		}
+		.tag {
+	    background-color: #242424; 
+	    color: #e0e0e0;
+	    border: 1px solid #444444; 
+	    border-radius: 20px; /* Esto crea la forma redondeada de la imagen */
+	    padding: 4px 12px;
+	    font-size: 14px;
+		}
         .references-container {
             display: flex;
             gap: 40px;
@@ -377,9 +391,18 @@
             </div>
 
             <div class="sec-soft-skills">
-                <div class="section-title">Habilidades blandas</div>
-                <p>Proactividad; adaptabilidad; cooperación; aprendizaje y mejora continua; resolución de problemas con pensamiento analítico, multimodelo y sistémico; comunicación efectiva; liderazgo técnico; visión prospectiva.</p>
-            </div>
+			    <div class="section-title">Habilidades blandas</div>
+			    <div class="tags-container">
+			        <span class="tag">Proactividad</span>
+			        <span class="tag">Adaptabilidad</span>
+			        <span class="tag">Cooperación</span>
+			        <span class="tag">Aprendizaje y mejora continua</span>
+			        <span class="tag">Resolución de problemas con pensamiento analítico, multimodelo y sistémico</span>
+			        <span class="tag">Comunicación efectiva</span>
+			        <span class="tag">Liderazgo técnico</span>
+			        <span class="tag">Visión prospectiva</span>
+			    </div>
+			</div>
 
             <div class="sec-langs">
                 <div class="section-title">Idiomas</div>
@@ -440,9 +463,14 @@
             </div>
 
             <div class="sec-interests">
-                <div class="section-title">Intereses personales</div>
-                <p>Lectura de divulgación científica, ciencias sociales, ensayo, memorias, desarrollo personal y ficción; cine; práctica regular de natación; seguimiento de la actualidad socioeconómica.</p>
-            </div>
+			    <div class="section-title">Intereses personales</div>
+			    <div class="tags-container">
+			        <span class="tag">Lectura de divulgación científica, ciencias sociales, ensayo, memorias, desarrollo personal y ficción</span>
+			        <span class="tag">Cine</span>
+			        <span class="tag">Práctica regular de natación</span>
+			        <span class="tag">Seguimiento de la actualidad socioeconómica</span>
+			    </div>
+			</div>
         </div>
 
         <div class="divider-vertical"></div>
